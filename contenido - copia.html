@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ventas</title>
+	 <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta  charset=UTF-8 name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+       <!-- Compiled and minified CSS -->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   
+
+      <style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+      <!---->
+      <style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 30px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+ /* padding: 8px 12px;*/
+  border: none;
+
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+
+/* The Modal */
+
+<style>
+.city{
+display: none;
+}
+</style>
+</head>
+<body>
+	<nav >
+    <div class="nav-wrapper white lighten-2 ">
+      <ul class="left hide-on-med-and-down">
+        <li><a class="openbtn" onclick="openNav()">☰</a>
+
+        </li>
+      </ul>
+
+	
+      <ul class="right hide-on-med-and-down">
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button blue-text">
+        	<i class="material-icons left">contact_mail</i>
+        </button>
+
+      </ul>
+    </div>
+  </nav>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#">Perfil</a>
+  
+   <button class="dropdown-btn">Catálogos
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Productos</a>
+    <a href="#">Precios</a>
+    <a href="#">Otros</a>
+  </div>
+  <a href="#">Ventas</a>
+  <button class="dropdown-btn">Configuraciones
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Encuestas</a>
+    <a href="#">Promociones</a>
+    <a href="#">Redes Sociales</a>
+    <a href="#">Formas de Pago</a>
+  </div>
+   <button class="dropdown-btn">Usuarios
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Administrador</a>
+    <a href="#">Clientes</a>
+    <a href="#">Repartidor</a>
+  </div>
+  <a href="#">Comentarios</a>
+  
+  <a href="#">Estadísticas</a>
+</div>
+
+
+<br>
+
+  <h4 class="center">Ventas</h4>
+  <br>
+  <br>
+
+<!----->
+   	 
+     <div class="container">
+        <!-- Page Content goes here -->
+         <div class="row">
+		      <div class="col s3 ">
+		      	<input id="nombre" placeholder="Id de compra" type="text" class="validate">
+	          	
+		      </div>
+		      <div class="col s3 ">
+		      	<input id="nombre" placeholder="Nombre" type="text" class="validate">
+	          	
+		      </div>
+		      <div class="col s3 ">
+		      	<input id="st" placeholder="Estatus" type="text" class="validate">
+		      		
+			  
+		      </div>
+		      <div class="col s3">
+		      	<a class="waves-effect waves-light indigo darken-4 btn"><i class="material-icons left">search</i>Buscar</a>
+		      </div>
+	     </div>
+	     <br>
+
+	      <div class="row">
+	      	<div class="col s9">
+	      		
+	      	</div>
+	      	<div class="col s3">
+	      		<a class="waves-effect waves-light green accent-4 btn"><i class="material-icons left">add</i>Agregar</a>
+	      	</div>
+	      </div>
+	      <br>
+	      
+	      	
+	     <div class="row">
+	     	
+	   
+	      <div class="col s12">
+
+				      	<table class="responsive-table striped">
+				        <thead>
+				          <tr>
+				              <th>Id Compra</th>
+				              <th>Nombre</th>
+				              <th>Estatus</th>
+				              <th>Acciones</th>
+				          </tr>
+				        </thead>
+
+				        <tbody>
+				          <tr>
+				            <td>1</td>
+				            <td>José Dominguez</td>
+				            <td>Pendiente</td>
+				            <td>
+				            	<a class="btn-floating red"><i class="material-icons">insert_chart</i></a>
+							    <a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a>
+							    <a class="btn-floating green"><i class="material-icons">publish</i></a>
+							    <a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
+							  
+				            </td>
+				          </tr>
+				          <tr>
+				            <td>2</td>
+				            <td>Alonso Gutierrez</td>
+				            <td>Enviando</td>
+				            <td>
+				            	<a class="btn-floating red"><i class="material-icons">insert_chart</i></a>
+							    <a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a>
+							    <a class="btn-floating green"><i class="material-icons">publish</i></a>
+							    <a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
+							  
+				            </td>
+				          </tr>
+				          <tr>
+				            <td>3</td>
+				            <td>Pedro Jimenez</td>
+				            <td>Recibido</td>
+				            <td>
+				            	<a class="btn-floating red"><i class="material-icons">insert_chart</i></a>
+							    <a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a>
+							    <a class="btn-floating green"><i class="material-icons">publish</i></a>
+							    <a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
+							  
+				            </td>
+				          </tr>
+				           <tr>
+				            <td>4</td>
+				            <td>Rodrigo García</td>
+				            <td>En progreso</td>
+				            <td>
+				            	 <a class="btn-floating red"><i class="material-icons">insert_chart</i></a>
+							    <a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a>
+							    <a class="btn-floating green"><i class="material-icons">publish</i></a>
+							    <a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
+
+				            </td>
+				           </tr>
+				           <td>5</td>
+				            <td>Hernesto Mendoza</td>
+				            <td>Entregado</td>
+				            <td>
+				            	<a class="btn-floating red"><i class="material-icons">insert_chart</i></a>
+							    <a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a>
+							    <a class="btn-floating green"><i class="material-icons">publish</i></a>
+							    <a class="btn-floating blue"><i class="material-icons">attach_file</i></a>
+							  
+				            </td>
+				          </tr>
+				        </tbody>
+				      </table>
+	      </div>
+	    </div>
+      </div>
+<!-- The Modal -->
+<div id="id01" class="w3-modal"><!--Idiv1-->
+	<div class="w3-modal-content w3-card-4 w3-animate-zoom"><!--Idiv2-->
+		<header class="w3-container w3-blue">
+			<span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-blue w3-xlarge w3-display-topright">&times;</span>
+			<h2>Header</h2>
+		</header>
+		<div class="w3-bar w3-border-bottom"><!--Idiv3-->	
+			<button class="tablink w3-bar-item w3-button" onclick="openCity(event,'London')">London</button>
+		</div><!--Fdiv3-->	
+		<div class="w3-bar w3-border-bottom"><!--Idiv4-->	
+			<button class="tablink w3-bar-item w3-button" onclick="openCity(event,'Paris')">Paris</button>
+		</div><!--Fdiv4-->	
+		<div class="w3-bar w3-border-bottom"><!--Idiv5-->	
+			<button class="tablink w3-bar-item w3-button" onclick="openCity(event,'Tokio')">Tokio</button>
+		</div><!--Fdiv5-->	
+
+
+		<div id="London" class="w3-container city">
+			Texto london
+		</div>
+		<div id="Paris" class="w3-container city">
+			Texto paris
+		</div>
+		<div id="Tokio" class="w3-container city">
+			Texto tokio
+		</div>
+
+		<div class="w3-container w3-light-grey w3-padding">
+			<button class="w3-button w3-right w3-white w3-border" onclick="document.getElementById('id01').style.display='none'">
+				Cerrar
+			</button>
+			
+		</div>
+	</div><!--Fdiv2-->	
+</div><!--Fdiv1-->
+<!---->
+<script type="text/javascript">
+	
+</script>
+<!---->
+
+<script>
+	document.getElementsByClassName("tablink")[0].click();
+	function openCity(evt, cityName){
+		var i, x, tablinks;
+		x = document.getElementsByClassName("city");
+
+		for (var i = 0; i < x.length; i++) {
+			x[i].style.display="none";
+		}
+		tablinks = document.getElementsByClassName("tablink");
+		for (var i = 0; i < x.length; i++) {
+			tablinks[i].classList.remove("w3-light-grey");
+		}
+		document.getElementById(cityName).style.display = "block";
+		evt.currentTarget.classList.add("w3-light-grey");
+	}
+
+</script>		
+<!---->
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+  
+  // Or with jQuery
+  
+
+
+</script>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+ <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    	instance.getSelectedValues();
+		 var instance = M.FormSelect.getInstance(elem);
+
+		 document.addEventListener('DOMContentLoaded', function() {
+		    var elems = document.querySelectorAll('select');
+		    var instances = M.FormSelect.init(elems, options);
+		  });
+
+		  // Or with jQuery
+
+		  $(document).ready(function(){
+		    $('select').formSelect();
+		  });
+		  instance.destroy();
+    </script>
+
+</body>
+
+</html>
